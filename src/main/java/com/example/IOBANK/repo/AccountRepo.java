@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 import java.util.Optional;
 
-public interface AccountRepo extends JpaRepository<String, Account> {
+public interface AccountRepo extends JpaRepository<Account,String> {
     boolean existsByAccountNumber(Long accountNumber);
     boolean existsByCodeAndOwnerUid(String code, String uid);
     List<Account> findAllByOwnerUid(String uid);
